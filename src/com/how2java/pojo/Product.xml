@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.pojo">
+	<resultMap type="Product" id="productBean">
+		<id column="pid" property="id" />
+		<result column="pname" property="name" />
+		<result column="price" property="price" />
+		<association property="category" javaType="Category">
+			<id column="cid" property="id" />
+			<result column="cname" property="name"></result>
+		</association>
+	</resultMap>
+	<select id="listProduct" resultMap="productBean">
+		select c.*, p.*, c.id 'cid', p.id 'pid', c.name 'cname', p.name 'pname' from
+		category_ c left join product_ p on c.id = p.cid
+	</select>
+</mapper>
