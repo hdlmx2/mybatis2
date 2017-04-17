@@ -6,5 +6,9 @@ public class TestMybatis {
 		System.out.println("hello mybatis");
 
 	}
+	
+	public void test(){
+		
+	}
 
 }
