@@ -10,5 +10,8 @@ public class TestMybatis {
 	public void test(){
 		
 	}
+	public static void test2(){
+		
+	}
 
 }
